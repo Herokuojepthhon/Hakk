@@ -8,7 +8,7 @@ from os import system
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
 api_hash = os.environ.get("API_HASH")
 token = os.environ.get("BOT_TOKEN")
-client = TelegramClient('Jepthob', api_id, api_hash).start(bot_token=token)
+client = TelegramClient('YUIRFS', api_id, api_hash).start(bot_token=token)
 from telethon import TelegramClient as tg
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest as pc, JoinChannelRequest as join, LeaveChannelRequest as leave, DeleteChannelRequest as dc
 from telethon.sessions import StringSession as ses
@@ -145,7 +145,7 @@ async def userchannels(strses):
 import logging
 logging.basicConfig(level=logging.WARNING)
 
-channel = "Jepthon"
+channel = "YUIRFS"
 menu = '''
 
 A : [ ** تحقق من قنوات ومجموعات الحساب **]
@@ -193,7 +193,7 @@ async def op(event):
 @client.on(events.NewMessage(pattern="/give"))
 async def op(event):
   if not event.sender_id == ilyass:
-    return await event.reply("@jepthon")
+    return await event.reply("@YUIRFS")
   async for x in client.iter_messages("EE48i"):
     try:
       await x.forward_to("EE48i")
